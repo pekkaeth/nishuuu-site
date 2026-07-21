@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Photos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="page1.html">Page 1</a>
+        <a href="page2.html">Page 2</a>
+        <a href="page3.html">Page 3</a>
+        <a href="gallery.html?from=nav">Photos</a>
+      </nav>
+
+      <section class="page-card">
+        <p class="eyebrow">Our little memory lane</p>
+        <h1>Some photos of us together</h1>
+        <p>
+          My love for you is filled with so many sweet memories, and these photos are just a few of the moments that make my heart happy. I hope they bring a smile to your face as they do to mine.
+        </p>
+
+        <div class="hero-actions" style="margin-top: 18px; margin-bottom: 18px;">
+          <a class="btn primary" href="prank.html">One last surprise</a>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="images/photo1.jpeg" alt="Our first photo together" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/photo2.jpeg" alt="A sweet photo of us" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/photo3.jpeg" alt="Another cute memory" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/photo4.jpeg" alt="More lovely moments together" />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const isDirectOpen = !params.has('from') && window.location.pathname.toLowerCase().endsWith('gallery.html');
+      if (isDirectOpen) {
+        window.location.replace('index.html');
+      }
+    </script>
+  </body>
+</html>
