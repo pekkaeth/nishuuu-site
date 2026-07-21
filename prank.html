@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One Last Surprise</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="page1.html">Page 1</a>
+        <a href="page2.html">Page 2</a>
+        <a href="page3.html">Page 3</a>
+        <a href="gallery.html?from=prank">Photos</a>
+      </nav>
+
+      <section class="page-card prank-card">
+        <p class="eyebrow">One last little test</p>
+        <h1>Did you like it?</h1>
+        <p class="prank-text">Just one tiny prank for you 😏</p>
+
+        <div class="prank-buttons">
+          <button id="loveBtn" class="btn primary prank-btn">I love you</button>
+          <button id="dontBtn" class="btn secondary prank-btn">I don't</button>
+        </div>
+
+        <p id="prankMessage" class="prank-message">Come on, be honest 😌</p>
+        <div id="teddyScene" class="teddy-scene" aria-hidden="true">
+          <div class="teddy-bear">🧸</div>
+          <div class="heart-float">💖</div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      const loveBtn = document.getElementById('loveBtn');
+      const dontBtn = document.getElementById('dontBtn');
+      const prankMessage = document.getElementById('prankMessage');
+      const teddyScene = document.getElementById('teddyScene');
+      let size = 1;
+
+      if (dontBtn) {
+        dontBtn.addEventListener('click', () => {
+          size += 0.08;
+          loveBtn.style.transform = `scale(${size})`;
+          loveBtn.style.transition = 'transform 0.2s ease';
+          prankMessage.textContent = 'Nope, try again 😝';
+        });
+      }
+
+      if (loveBtn) {
+        loveBtn.addEventListener('click', () => {
+          loveBtn.style.transform = 'scale(1)';
+          prankMessage.textContent = 'Aww, I love you too, my pookie 💕';
+          teddyScene.classList.add('show');
+          dontBtn.textContent = 'Okay fine, I do';
+        });
+      }
+    </script>
+  </body>
+</html>
